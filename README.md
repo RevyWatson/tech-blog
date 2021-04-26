@@ -37,7 +37,7 @@ This application is a CMS-style blog site where developers can publish their blo
 
 ## Dependencies
 
-This application utilizes the [express-handlebars](https://www.npmjs.com/package/express-handlebars) package, [MySQL2](https://www.npmjs.com/package/mysql2) package, the [Sequelize](https://www.npmjs.com/package/sequelize) package, the [bcrypt package](https://www.npmjs.com/package/bcrypt) to hash passwords, the [express-session](https://www.npmjs.com/package/express-session) and [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize) packages to add authentication.
+This application utilizes the [express-handlebars](https://www.npmjs.com/package/express-handlebars) package, the [MySQL2](https://www.npmjs.com/package/mysql2) package, the [Sequelize](https://www.npmjs.com/package/sequelize) package, the [bcrypt package](https://www.npmjs.com/package/bcrypt) to hash passwords, [express-session](https://www.npmjs.com/package/express-session) and [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize) packages to add authentication.
 
 ## Installation
 
