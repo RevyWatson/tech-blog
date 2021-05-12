@@ -1,0 +1,20 @@
+* {
+    font-family: 'IM Fell DW Pica', serif;
+}
+
+body {
+    background-color: rgb(209, 195, 191);
+}
+
+a {
+    text-decoration: none;
+    font-size: 27px;
+}
+
+.post {
+    background-color: rgb(208, 221, 233);
+}
+
+.content {
+    background-color: rgb(227, 237, 241)
+}
