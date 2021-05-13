@@ -21,20 +21,24 @@
         <h1 class="text-center p-5">Tech Blog</h1>
         <div class="container"></div>
         <nav class="row text-center p-3">
-            <a class="col-lg-4 col-sm-12" href="../">Home</a>
-            {{#if loggedIn}}
-            <a class="col-lg-4 col-sm-12" href="../">Logout</a>
-            <a class="col-lg-4 col-sm-12" href="../dashboard">Dashboard</a>
+            <a class="col-lg-4 col-sm-12" href="/">Home</a>
+            {{#if logged_in}}
+            <a class="col-lg-4 col-sm-12" href="/" id="exit">Logout</a>
+            <a class="col-lg-4 col-sm-12" href="/dashboard">Dashboard</a>
             {{else}}
-            <a class="col-lg-4 col-sm-12" href="../login">Login</a>
-            <a class="col-lg-4 col-sm-12" href="../login">Dashboard</a>
+            <a class="col-lg-4 col-sm-12" href="/login">Login</a>
+            <a class="col-lg-4 col-sm-12" href="/login">Dashboard</a>
             {{/if}}
         </nav>
     </header>
     
     {{{ body }}}
 
-    <script src="/js/logout.js"></script>
+    {{#if logged_in}}
+    <script src="./js/logout.js"></script>
+    {{else}}
+    <script src="./js/login.js"></script>
+    {{/if}}
 </body>
 
 </html>

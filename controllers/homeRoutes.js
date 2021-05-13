@@ -13,22 +13,31 @@ router.get('/', async (req, res) => {
       ],
     });
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
-    res.render("homepage", { 
-      blogs, 
-      logged_in: req.session.logged_in 
+    res.render("homepage", {
+      blogs,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/blog/:id', async (req, res) => {
+router.get("/blog/:id", async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
       include: [
         {
           model: User,
           attributes: ["username"],
+        },
+        {
+          model: Blog,
+          attributes: [
+            "id",
+            "title",
+            "content",
+            "date_created"
+          ],
         },
       ],
     });
@@ -58,12 +67,20 @@ router.get("/dashboard", withAuth, async (req, res) => {
   }
 });
 
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/dashboard');
+    res.redirect("/dashboard");s
     return;
   }
-  res.render('login');
+  res.render("login");
+});
+
+router.get("/signup", (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("/");
+    return;
+  }
+  res.render("signup");
 });
 
 module.exports = router;

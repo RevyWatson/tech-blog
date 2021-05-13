@@ -1,23 +1,18 @@
     {{#each blogs as |blog| }}
+    <a href="/blog/:id">
     <div class="container p-4">
         <section>
-            <div class="post border border-secondary border-2 p-2">
+            <div class="post rounded border border-secondary border-2 p-2">
                 <header class="row p-3"> 
                 <h3 class="col-lg-5 col-sm-12 text-start">{{ blog.title }}</h3>
-                <h4 class="col-lg-5 col-sm-12 text center">By: {{ blog.user.username }}</h4>
                 <h4 class="col-lg-2 col-sm-12 text-end">{{ format_date blog.date_created }}</h4>
-
                 </header>
-                <article class="content text-center border border-secondary border-1 p-2 m-2">
-                    {{ blog.content }}
-                </article>
-                {{#if loggedIn }}
+                {{#if logged_in}}
                 <button class="btn btn-primary col m-2" type="">Comment</button>
-                <button class="btn btn-primary col m-2" type="">Update</button>
-                <button class="btn btn-danger col m-2" type="">Delete</button>
                 {{else}}
                 {{/if}}
             </div>
         </section>
     </div>
+    </a>
 {{/each}}
