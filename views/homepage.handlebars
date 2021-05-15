@@ -1,5 +1,9 @@
     {{#each blogs as |blog| }}
-    <a href="/blog/:id">
+    {{#if logged_in}}
+    <a href="/api/blog/{{ blog.id }}">
+    {{else}}
+    <a href="/login">
+    {{/if}}
     <div class="container p-4">
         <section>
             <div class="post rounded border border-secondary border-2 p-2">
@@ -7,12 +11,11 @@
                 <h3 class="col-lg-5 col-sm-12 text-start">{{ blog.title }}</h3>
                 <h4 class="col-lg-2 col-sm-12 text-end">{{ format_date blog.date_created }}</h4>
                 </header>
-                {{#if logged_in}}
-                <button class="btn btn-primary col m-2" type="">Comment</button>
-                {{else}}
-                {{/if}}
             </div>
         </section>
     </div>
     </a>
+    </a>
 {{/each}}
+
+<script src="./js/login.js"></script>

@@ -1,6 +1,5 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
-  
     const password = document.querySelector("#password-login").value.trim();
     const username = document.querySelector("#username-login").value.trim();
   
@@ -12,7 +11,10 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace("/dashboard");
+        setTimeout(() => {
+          // console.log("Can you just do the thing!");
+          document.location.replace("/dashboard");
+        }, 500);
       } else {
         alert(response.statusText);
       }

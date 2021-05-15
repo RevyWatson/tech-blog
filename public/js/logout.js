@@ -5,7 +5,10 @@ const logout = async () => {
     });
   
     if (response.ok) {
-      document.location.replace('/');
+      // setTimeout(() => {
+      //   console.log("Can you just do the thing!");
+        document.location.replace("/");
+      // }, 1000);
     } else {
       alert(response.statusText);
     }

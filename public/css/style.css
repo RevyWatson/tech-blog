@@ -11,6 +11,11 @@ a {
     font-size: 27px;
 }
 
+#exit {
+    text-decoration: none;
+    font-size: 27px;
+}
+
 .post {
     background-color: rgb(208, 221, 233);
 }

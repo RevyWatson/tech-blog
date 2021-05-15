@@ -18,6 +18,4 @@ When the user clicks on the button to create a new blog post the title and conte
 When the user clicks on one of their existing posts in the dashboard they are able to delete or update the post and are taken back
  to an updated dashboard.
 
-When the user clicks on the logout option in the navigation they're signed out of the site.
-
 If the user is idle on the page for more than a set time they're automatically signed out of the site.

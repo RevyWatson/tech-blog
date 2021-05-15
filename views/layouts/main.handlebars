@@ -23,7 +23,7 @@
         <nav class="row text-center p-3">
             <a class="col-lg-4 col-sm-12" href="/">Home</a>
             {{#if logged_in}}
-            <a class="col-lg-4 col-sm-12" href="/" id="exit">Logout</a>
+            <button type="button" class="btn btn-link col-lg-4 col-sm-12" id="exit">Logout</button>
             <a class="col-lg-4 col-sm-12" href="/dashboard">Dashboard</a>
             {{else}}
             <a class="col-lg-4 col-sm-12" href="/login">Login</a>
@@ -36,8 +36,6 @@
 
     {{#if logged_in}}
     <script src="./js/logout.js"></script>
-    {{else}}
-    <script src="./js/login.js"></script>
     {{/if}}
 </body>
 
