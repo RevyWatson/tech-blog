@@ -9,7 +9,7 @@
                 {{#each blogs as |blog|}}
                 <div class="row mb-2">
                     <div class="col-md-8">
-                        <h4><a href="/blog/{{ blog.id }}">{{ blog.title }}</a></h4>
+                        <h4 class="p-2"><a href="/blog/{{ blog.id }}">{{ blog.title }}</a></h4>
                     </div>
                     <div class="col-md-4">
                         <button class="btn btn-sm btn-primary m-2" data-id="{{ blog.id }}">Edit</button>
@@ -18,8 +18,22 @@
                 </div>
                 {{/each}}
             </div>
+            
+            {{else}}
+            <div class="col-lg-12 col-sm-12 blog-list text-center post rounded border border-secondary border-2 p-2">
+                <h3 class="p-2">Your Blog Posts:</h3>
+
+                <div class="row mb-2">
+                    <div class="col-md-9">
+                        <h5 class="p-2">Feeling inspired? Have thoughts and feels you want to share? Write your first blog post and it'll appear here!</h5>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-sm btn-primary m-2 disabled">Edit</button>
+                        <button class="btn btn-sm btn-danger m-2 disabled">Delete</button>
+                    </div>
+                </div>
             {{/if}}
-                    <button id="create-id" class="col-lg-2 btn btn-sm btn-primary m-2" data-id="{{ blog.id }}">Write New Blog Post</button>
+                    <button id="create-id" class="col-lg-2 btn btn-sm btn-primary m-2" data-id="{{ blog.id }}">New Blog Post</button>
         </div>
     </div>
  
