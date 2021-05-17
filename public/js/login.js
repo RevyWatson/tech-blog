@@ -12,7 +12,6 @@ const loginFormHandler = async (event) => {
   
       if (response.ok) {
         setTimeout(() => {
-          // console.log("Can you just do the thing!");
           document.location.replace("/dashboard");
         }, 500);
       } else {
@@ -35,7 +34,9 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
+        setTimeout(() => {
         document.location.replace("/dashboard");
+      }, 500);
       } else {
         alert(response.statusText);
       }

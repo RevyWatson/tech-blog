@@ -22,29 +22,19 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get("/blog/:id", async (req, res) => {
+//This route doesn't work. Can't figure out why.
+//Supposed to redirect from homepage (when individual blog is clicked) and get  
+//the blog page and render the blog.handlebars content.
+router.get("/blog/:id", withAuth, async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ["username"],
-        },
-        {
-          model: Blog,
-          attributes: [
-            "id",
-            "title",
-            "content",
-            "date_created"
-          ],
-        },
-      ],
+      attributes: { exclude: ["password"] },
+      include: [{ model: Blog, User }],
     });
     const blog = blogData.get({ plain: true });
     res.render("blog", {
       ...blog,
-      logged_in: req.session.logged_in
+      logged_in: true
     });
   } catch (err) {
     res.status(500).json(err);
@@ -67,6 +57,16 @@ router.get("/dashboard", withAuth, async (req, res) => {
   }
 });
 
+//This route doesn't work. Can't figure out why. Have tried changing the "blog" to "create" too.
+//Supposed to redirect from the dashboard to the create new blog post by rendering the create.handlebars content.
+router.get("/blog", withAuth, async (re, res) => {
+  if (req.session.logged_in) {
+    res.redirect("/create");
+    return;
+  }
+  res.render("blog");
+});
+
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/dashboard");
@@ -77,7 +77,7 @@ router.get("/login", (req, res) => {
 
 router.get("/signup", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/");
+    res.redirect("/dashboard");
     return;
   }
   res.render("signup");

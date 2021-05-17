@@ -1,6 +1,6 @@
     {{#each blogs as |blog| }}
     {{#if logged_in}}
-    <a href="/api/blog/{{ blog.id }}">
+    <a href="/blog/{{ blog.id }}">
     {{else}}
     <a href="/login">
     {{/if}}
@@ -14,7 +14,6 @@
             </div>
         </section>
     </div>
-    </a>
     </a>
 {{/each}}
 
