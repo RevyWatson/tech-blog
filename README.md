@@ -4,9 +4,14 @@
 
 This application is a CMS-style blog site where developers can publish their blog posts and comment on other developers’ posts.
 
+![Screenshot (96)](https://user-images.githubusercontent.com/76264693/118419481-1f315180-b68a-11eb-84a7-eca0e18c05b0.png)
+![Screenshot (97)](https://user-images.githubusercontent.com/76264693/118419483-20fb1500-b68a-11eb-9e23-a5fad637b852.png)
+![Screenshot (98)](https://user-images.githubusercontent.com/76264693/118419485-23f60580-b68a-11eb-905d-d8abbc843967.png)
+![Screenshot (99)](https://user-images.githubusercontent.com/76264693/118419487-26585f80-b68a-11eb-9cce-47ffa7c10076.png)
+
 ## Deployed Application
 
-[Tech Blog]()
+[Tech Blog](https://tranquil-shore-17488.herokuapp.com/)
 
 ## Table of Contents
 
